@@ -1,0 +1,302 @@
+css
+/* --- reset --- */
+/* http://meyerweb.com/eric/tools/css/reset/ ... (以下省略) */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+body { line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+* { box-sizing: border-box; }
+img { max-width: 100%; height: auto; vertical-align: middle; }
+a { display: inline-block; text-decoration: none; color: inherit; }
+
+/* {
+  outline: 2px solid #000;
+}*/
+
+
+* {
+  box-sizing: border-box;
+}
+
+/* --- 全域與基本設定 --- */
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 500;
+  line-height: 1.5;
+  background-color: #fbfbfb;
+  color: #333;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+/* --- Header & Nav --- */
+.main-header {
+  display: flex;
+  justify-content: center;
+  padding: 12px;
+  height: 90px;
+}
+
+.main-header nav ul {
+  display: flex;
+  gap: 10px; 
+}
+
+.main-header nav a {
+  font-size: 24px;
+  font-weight: 700;
+  padding: 10px;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.main-header nav a:hover {
+  background-color: #f0f0f0;
+  border-color: #333;
+  border: 1px solid #ddd; 
+  border-radius: 10px; 
+}
+
+
+/* --- Main Content --- */
+.content-wrapper {
+  max-width: 1320px; 
+  margin: 0 auto;
+  padding: 30px 15px; 
+}
+
+/*.float-left {
+  float: left;
+  margin-right: 10px;
+}*/
+
+/*.banner-images {
+  margin-bottom: 30px; 
+}*/
+
+
+/* --- Banner Section --- */
+.banner {
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  text-align: center; 
+}
+
+.banner-left,
+.banner-right {
+  flex: 1;
+}
+
+.banner-right {
+  position: relative; 
+}
+
+
+.banner-intro {
+  position: absolute; 
+  top: 50%;           
+  left: 50%;         
+  transform: translate(-50%, -50%); 
+  width: 100%; 
+  text-align: center;
+}
+.banner-title {
+  font-size: 52px;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.banner-subtitle {
+  font-size: 28px;
+}
+
+
+/* --- article-list --- */
+.article-list {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(312px, 1fr)); 
+    gap: 30px;
+}
+
+.article-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.article-date {
+    color: #777;
+    font-size: 0.9em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.article-first{
+  display: grid; 
+  align-items: center;
+  flex-direction: column;
+} 
+
+.article-co{
+  display: flex;
+  align-items: center;
+} 
+.article-hightlight {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: blue;
+    height: 20px; 
+    line-height: 20px; 
+}
+
+.popular-tag {
+  background-color:#007bff; 
+  color: #fff; 
+  font-size: 0.8em; 
+  padding: 2px 5px; 
+  border-radius: 20px; 
+  margin-left: 20px;
+  vertical-align: middle; 
+  font-weight: bold; 
+  font-size: 1.1em;
+  height: 20px; 
+  line-height: 20px; 
+}
+
+.article-title {
+    font-size: 1.3em;
+    font-weight: bold;
+    height: 30px;
+    line-height: 30px; 
+}
+
+.article-excerpt {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+
+.read-more {
+    display: inline-block;
+    background-color:white;
+    color:#007bff;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 50px;
+    border-color:#007bff 1px;
+    font-size: 0.95em;
+    align-self: flex-start; 
+    border: 1px solid #007bff; 
+    transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+.read-more:hover {
+    background-color: #0056b3;
+    color:white;
+}
+
+.fixed-size-image {
+  height: 200px;
+  object-fit: cover;
+  border: 2px solid whitesmoke; 
+}
+
+/* --- 導覽列 --- */
+.pagination {
+  display: flex; 
+  justify-content: center; 
+  list-style: none; 
+  padding: 0;
+  margin-top: 60px; 
+  gap: 10px; 
+}
+
+.page-link {
+  display: block; 
+  padding: 8px 16px; 
+  text-decoration: none; 
+  transition: all 0.3s ease;
+}
+
+/* 滑鼠移到按鈕上的樣式 (但不要是當前頁面) */
+.page-item:not(.active) .page-link:hover {
+  background-color: #f0f0f0;
+  border-color: #333;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+/* 當前頁面 (active) 的樣式 */
+.page-item.active .page-link {
+  font-weight: bold;
+}
+
+/* 省略符號 (...) 的樣式 */
+.page-item.disabled .page-link {
+ font-weight:700;
+}
+
+/* --- email --- */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-left a {
+    font-size: 24px;
+    text-decoration: none;
+    color: #333;
+    margin-right: 60px;
+}
+
+.contact-right a {
+    margin-left: 15px;
+    font-size: 24px;
+    color: #333;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.contact-right a:hover {
+    transform: scale(1.2);
+    color: #007bff;
+}
+
+
+/* --- Footer --- */
+.main-footer {
+  text-align: center;
+  padding: 24px 0;
+  background-color: #f8f9fa; 
+  color: #333;
+  margin-top: 60px; 
+}
+
+.main-footer p{
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  color: #666;
+  margin: 0;
+}
+
+/* 響應式設計 */
+@media (max-width: 992px) { ... }
+
+@media (max-width: 767px) { ... }
+
+@media (max-width: 576px) { ... }
